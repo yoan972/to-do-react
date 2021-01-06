@@ -14,9 +14,14 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@emotion/babel-plugin": "^11.1.2",
+    "babel-plugin-emotion": "^11.0.0",
+    "babel-plugin-jsx-pragmatic": "^1.0.2",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
