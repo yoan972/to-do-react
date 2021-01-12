@@ -4,16 +4,16 @@ import { css } from "@emotion/react"
 import profilePic from "./../images/profil_pic.jpg"
 
 const profile = css`
-margin: 2em;
-text-align: center;
+  margin: 2em;
+  text-align: center;
 `
 const profile__pic = css`
-width: 200px;
-height: 200px;
-border-radius: 50%;
-background: url(${profilePic}) center no-repeat;
-background-size: cover;
-margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: url(${profilePic}) center no-repeat;
+  background-size: cover;
+  margin: 20px auto;
 `
 
 const profile__name = css`

@@ -2,7 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { Global } from "@emotion/react"
 import Profile from "./components/Profile"
-
+import { TodoContextProvider } from "./contexts/todo-context"
+import Todo from "./components/Todo"
 
 const App = () => (<div>
   <Global
@@ -28,6 +29,9 @@ const App = () => (<div>
       }}
     />
   <Profile />
+  <TodoContextProvider>
+    <Todo/>
+  </TodoContextProvider>
   </div>)
 
 ReactDOM.render(<App />, document.getElementById("app"))
