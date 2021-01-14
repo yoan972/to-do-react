@@ -4,6 +4,7 @@ import { Global } from "@emotion/react"
 import Profile from "./components/Profile"
 import { TodoContextProvider } from "./contexts/todo-context"
 import Todo from "./components/Todo"
+import Counter from "./components/Counter"
 
 const App = () => (<div>
   <Global
@@ -30,6 +31,7 @@ const App = () => (<div>
     />
   <Profile />
   <TodoContextProvider>
+    <Counter />
     <Todo/>
   </TodoContextProvider>
   </div>)
