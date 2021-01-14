@@ -1,34 +1,9 @@
 import React, { useContext, useState } from "react"
 import Modal from "./Modal"
-import { css } from "@emotion/react"
 import { TodoContext } from "../contexts/todo-context"
 import { makeid } from "../utils/utils"
-
-const modal__input = css`
-  height: 40px;
-  width: 70%;
-  font-size: 18px;
-  margin: 12px;
-`
-const modal__btn = css`
-  background-color: #3598fe;
-  border: 1px solid rgb(0, 0, 0);
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  height: 40px;
-  line-height: 1.5;
-  margin: 1em auto;
-  padding: 0px;
-  width: 140px;
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  transition: 0.3s;
-`
-const modal__title = css`
-  color: #919099;
-`
+import { modal__title, modal__input, modal__btn } from "../style/modal"
+import Button from "./Button"
 
 const AddModal = ({category, setShowModal}) => {
   const [title, setTitle] = useState("")
@@ -51,7 +26,8 @@ const AddModal = ({category, setShowModal}) => {
         id: makeid(24),
         title,
         subtitle,
-        category: category
+        category: category,
+        done: false
       }
     })
 
@@ -63,7 +39,7 @@ const AddModal = ({category, setShowModal}) => {
       <h2 css={modal__title}>Ajouter une tache</h2>
       <input css={modal__input} type="text" placeholder="Titre..." value={title} id="title" onChange={handleInputCHange}></input>
       <input css={modal__input} type="text" placeholder="Sous-titre..." value={subtitle} id="subtitle" onChange={handleInputCHange}></input>
-      <button css={modal__btn} onClick={handleAddTodo}>Ajouter</button>
+      <Button label="Ajouter" action= {handleAddTodo} theme="blue" />
     </Modal>
   )
 }

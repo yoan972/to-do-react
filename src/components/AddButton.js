@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import ReactDOM from "react-dom"
 import { css } from "@emotion/react"
 import AddModal from "./AddModal"
 

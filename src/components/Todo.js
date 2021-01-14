@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { css } from "@emotion/react"
 import AddButton from "./AddButton"
 import { TodoContext } from "../contexts/todo-context"
+import Item from "./Item"
 
 const tab = css`
   width: 200%;
@@ -25,24 +26,6 @@ const task__groupTitle = css`
   font-size: 18px;
 `
 
-const task__item = css`
-  background-color: #3598fe;
-  border-radius: 5px;
-  width: 45%;
-  min-width: 102px;
-  padding: 30px 20px;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 18px;
-`
-
-const task__itemTitle = css`
-  font-weight: bold;
-`
-
-const task__itemSubtitle = css`
-  color: #cecdd4;
-`
 const Todo = () => {
   const [state, dispatch] = useContext(TodoContext)
   return (
@@ -51,28 +34,18 @@ const Todo = () => {
           <section css={task__group}>
             <p css={task__groupTitle}>Places</p>
             {state.todos.map(todo => {
-              if (todo.category === "Places") {
-                return (
-                  <div key={todo.id} css={task__item}>
-                    <p css={task__itemTitle}>{todo.title}</p>
-                    <p css={task__itemSubtitle}>{todo.subtitle}</p>
-                  </div>
-                )
-              }
+              return (
+                !todo.done && todo.category === "Places" && <Item todo={todo} key={todo.id}/>
+              )
             })}  
             <AddButton category="Places"/>
           </section>
           <section css={task__group}>
             <p css={task__groupTitle}>People</p>
             {state.todos.map(todo => {
-              if (todo.category === "People") {
                 return (
-                  <div key={todo.id} css={task__item}>
-                    <p css={task__itemTitle}>{todo.title}</p>
-                    <p css={task__itemSubtitle}>{todo.subtitle}</p>
-                  </div>
+                  !todo.done && todo.category === "People" && <Item todo={todo} key={todo.id}/>
                 )
-              }
             })}  
             <AddButton category="People"/>
           </section>
